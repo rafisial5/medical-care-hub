@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:virtual_medical_hub/utils/bindings.dart';
 import 'package:virtual_medical_hub/utils/constants.dart';
 import 'package:virtual_medical_hub/view/all_doctors_screen.dart';
+import 'package:virtual_medical_hub/view/map_screen.dart';
 import 'package:virtual_medical_hub/view/my_appointments_screen.dart';
 import 'package:virtual_medical_hub/view/signup_screen.dart';
 
@@ -37,6 +38,10 @@ class RouteManagement {
       GetPage(
         name: kMyAppointmentScreenRoute,
         page: () =>  const MyAppointmentsScreen(),
+        binding: ScreenBindings(),),
+      GetPage(
+        name: kMapScreenRoute,
+        page: () =>  const MapScreen(),
         binding: ScreenBindings(),),
     ];
   }
