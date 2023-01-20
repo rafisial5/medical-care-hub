@@ -93,72 +93,192 @@ class DashBoardScreen extends GetView<DashboardScreenController>{
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 20,),
-            Image.asset('assets/images/logoheart.png'),
-            const SizedBox(height: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                customCard(title: "Doctor\nAppointment", iconData: Icons.person),
-                customCard(title: "Record\nKeeping", iconData: Icons.list_alt_outlined),
-              ],
-            ),
-            const SizedBox(height: 30,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                customCard(title: "Blood\nDonation", iconData: Icons.bloodtype),
-                customCard(title: "Ambulance\nService", iconData: Icons.car_repair),
-              ],
-            ),
-            const SizedBox(height: 30,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                customCard(title: "Emergency\nConsultant", iconData: Icons.emergency),
-                customCard(title: "Research B\nNutrition", iconData: Icons.energy_savings_leaf_rounded),
-              ],
-            ),
-          ],
+        child: Container(
+          color:  kBlueGreyColor.withAlpha(20),
+          child: Column(
+            children: [
+              const SizedBox(height: 20,),
+              Image.asset('assets/images/logoheart.png'),
+              const SizedBox(height: 20,),
+              _headingWidget("Doctor Appointment"),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
+                      _buildGuidelineCard(title: "All\nDoctors", iconData:  Icons.recent_actors),
+                      _buildGuidelineCard(title: "Register\nAppointment", iconData:  Icons.app_registration),
+                      _buildGuidelineCard(title: "My\nAppointment", iconData:  Icons.receipt),
+                    ],
+                  ),
+                ),
+              ),
+             const SizedBox(height: 12,),
+             const Divider(thickness: 1,),
+
+              const SizedBox(height: 20,),
+              _headingWidget("Record Keeping"),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
+                      _buildGuidelineCard(title: "Keep\nReport", iconData:  Icons.featured_play_list_outlined),
+                      _buildGuidelineCard(title: "Check\nReport", iconData:  Icons.playlist_add_check_circle_outlined),
+                      _buildGuidelineCard(title: "Upload\nConsultant", iconData:  Icons.upload_file),
+                      _buildGuidelineCard(title: "Check\nConsultant", iconData:  Icons.playlist_add_check),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12,),
+              const Divider(thickness: 1,),
+
+              const SizedBox(height: 20,),
+              _headingWidget("Blood Donation"),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
+                      _buildGuidelineCard(title: "Donate\nBlood", iconData:  Icons.bloodtype),
+                      _buildGuidelineCard(title: "Donation\nHistory", iconData:  Icons.history_outlined),
+                      _buildGuidelineCard(title: "Blood\nRequest", iconData:  Icons.bloodtype_outlined),
+                      _buildGuidelineCard(title: "Request\nHistory", iconData:  Icons.history_edu),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12,),
+              const Divider(thickness: 1,),
+
+              const SizedBox(height: 20,),
+              _headingWidget("Ambulance Service"),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
+                      _buildGuidelineCard(title: "All\nDoctors", iconData:  Icons.recent_actors),
+                      _buildGuidelineCard(title: "Register\nAppointment", iconData:  Icons.app_registration),
+                      _buildGuidelineCard(title: "My\nAppointment", iconData:  Icons.receipt),
+                      _buildGuidelineCard(title: "My\nAppointment", iconData:  Icons.receipt),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12,),
+              const Divider(thickness: 1,),
+
+
+              const SizedBox(height: 20,),
+              _headingWidget("Emergency Consultant"),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
+                      _buildGuidelineCard(title: "All\nDoctors", iconData:  Icons.recent_actors),
+                      _buildGuidelineCard(title: "Register\nAppointment", iconData:  Icons.app_registration),
+                      _buildGuidelineCard(title: "My\nAppointment", iconData:  Icons.receipt),
+                      _buildGuidelineCard(title: "My\nAppointment", iconData:  Icons.receipt),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12,),
+              const Divider(thickness: 1,),
+
+              const SizedBox(height: 20,),
+              _headingWidget("Research B Nutrition"),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    
+                    children: [
+                      _buildGuidelineCard(title: "General\nTables", iconData:  Icons.table_view),
+                      _buildGuidelineCard(title: "Data\nTables", iconData:  Icons.backup_table),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12,),
+              const Divider(thickness: 1,),
+
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Widget customCard ({required String title, required IconData iconData}) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: kGreenThemeColor
-      ),
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Container(
-        height: Get.width*0.40,
-        width: Get.width*0.5-20,
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: Colors.grey.shade200,
-          borderRadius: BorderRadius.circular(10)
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Icon(iconData, size: 60, color: kBlueThemeColor,),
-            const SizedBox(height: 10,),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: kBlueThemeColor
+  Widget _buildGuidelineCard({required String title, required IconData iconData}){
+    return SizedBox(
+      width: Get.width*0.33,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          GestureDetector(
+            onTap: () => controller.onTapMenuItem(title),
+            child: Container(
+              height: Get.width*0.25,
+              width: Get.width*0.25,
+              padding: const EdgeInsets.all(16),
+              margin: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.shade300,
+                    spreadRadius: 1,
+                    blurRadius: 2,
+                    offset: const Offset(0, 3), // changes position of shadow
+                  ),
+                ],
               ),
-            )
-          ],
-        ),
+              child: Icon(iconData,size: 50, color: kBlueThemeColor,),
+            ),
+          ),
+          Padding(
+            padding:const EdgeInsets.only(left: 16),
+            child: Text(
+              title,
+              style: const TextStyle(
+                color: Colors.black54,
+                fontWeight: FontWeight.bold,),
+            ),
+          )
+        ],
       ),
     );
   }
+
+  Widget _headingWidget(String heading){
+    return Padding(
+      padding: const EdgeInsets.only(top: 30.0,bottom: 8, left: 20),
+      child: Row(
+        children: [
+          Icon(Icons.dashboard_rounded, color: kBlueThemeColor),
+          const SizedBox(width: 8,),
+          Text(
+            heading,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+    );
+  }
+
 }
