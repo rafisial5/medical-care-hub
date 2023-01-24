@@ -82,7 +82,7 @@ class MapScreenController extends GetxController{
 
   Future<void> findNearestAmbulance() async {
     Position currentLocation = await Geolocator.getCurrentPosition();
-    double shortestDistance = 2000;
+    double shortestDistance = double.maxFinite;
     Map<LatLng,double> nearestAmbulance = {};
     for(int i=0;i<nearbyAmbulances.length;i++){
       double distance = Geolocator.distanceBetween(currentLocation.latitude, currentLocation.longitude, nearbyAmbulances[i].latitude, nearbyAmbulances[i].longitude);
