@@ -4,7 +4,9 @@ import 'package:virtual_medical_hub/utils/constants.dart';
 import 'package:virtual_medical_hub/view/all_doctors_screen.dart';
 import 'package:virtual_medical_hub/view/map_screen.dart';
 import 'package:virtual_medical_hub/view/my_appointments_screen.dart';
+import 'package:virtual_medical_hub/view/report_keeping_screen.dart';
 import 'package:virtual_medical_hub/view/signup_screen.dart';
+import 'package:virtual_medical_hub/view/upload_your_consultant_screen.dart';
 
 import '../view/dashboard_screen.dart';
 import '../view/register_appointment_screen.dart';
@@ -38,6 +40,14 @@ class RouteManagement {
       GetPage(
         name: kMyAppointmentScreenRoute,
         page: () =>  const MyAppointmentsScreen(),
+        binding: ScreenBindings(),),
+      GetPage(
+        name: kReportKeepingScreenRoute,
+        page: () =>   const ReportKeepingScreen(),
+        binding: ScreenBindings(),),
+      GetPage(
+        name: kUploadYourConsultantScreenRoute,
+        page: () =>   const UploadYourConsultantScreen(),
         binding: ScreenBindings(),),
       GetPage(
         name: kMapScreenRoute,

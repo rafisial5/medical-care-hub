@@ -4,8 +4,10 @@ import 'package:virtual_medical_hub/controlller/my_appoitments_screen_controller
 import 'package:virtual_medical_hub/controlller/register_appiontment_screen_controller.dart';
 import 'package:virtual_medical_hub/controlller/signin_screen_controller.dart';
 import 'package:virtual_medical_hub/controlller/signup_screen_controller.dart';
+import 'package:virtual_medical_hub/controlller/upload_your_consultant_screen_controller.dart';
 
 import '../controlller/all_doctors_screen_controller.dart';
+import '../controlller/report_keeping_screen_controller.dart';
 import '../controlller/map_screen_controller.dart';
 
 class ScreenBindings extends Bindings{
@@ -17,6 +19,8 @@ class ScreenBindings extends Bindings{
     Get.lazyPut(() =>   AllDoctorsScreenController());
     Get.lazyPut(() =>   RegisterAppointmentScreenController());
     Get.lazyPut(() =>   MyAppointmentsScreenController());
+    Get.lazyPut(() =>   ReportKeepingScreenController());
+    Get.lazyPut(() =>   UploadYourConsultantScreenController());
     Get.lazyPut(() =>   MapScreenController());
   }
 

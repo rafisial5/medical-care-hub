@@ -128,8 +128,8 @@ class DashBoardScreen extends GetView<DashboardScreenController>{
                   child: Row(
                     children: [
                       _buildGuidelineCard(title: "Keep\nReport", iconData:  Icons.featured_play_list_outlined),
-                      _buildGuidelineCard(title: "Check\nReport", iconData:  Icons.playlist_add_check_circle_outlined),
                       _buildGuidelineCard(title: "Upload\nConsultant", iconData:  Icons.upload_file),
+                      _buildGuidelineCard(title: "Check\nReport", iconData:  Icons.playlist_add_check_circle_outlined),
                       _buildGuidelineCard(title: "Check\nConsultant", iconData:  Icons.playlist_add_check),
                     ],
                   ),
@@ -166,10 +166,10 @@ class DashBoardScreen extends GetView<DashboardScreenController>{
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Row(
                     children: [
-                      _buildGuidelineCard(title: "All\nDoctors", iconData:  Icons.recent_actors),
-                      _buildGuidelineCard(title: "Register\nAppointment", iconData:  Icons.app_registration),
+                      _buildGuidelineCard(title: "Ambulance", iconData:  Icons.recent_actors),
+                      /*_buildGuidelineCard(title: "Register\nAppointment", iconData:  Icons.app_registration),
                       _buildGuidelineCard(title: "My\nAppointment", iconData:  Icons.receipt),
-                      _buildGuidelineCard(title: "My\nAppointment", iconData:  Icons.receipt),
+                      _buildGuidelineCard(title: "My\nAppointment", iconData:  Icons.receipt),*/
                     ],
                   ),
                 ),

@@ -4,4 +4,6 @@ String kDashboardScreenRoute = '/DashboardScreen';
 String kAllDoctorsScreenRoute = '/AllDoctorsScreen';
 String kRegisterAppointmentScreenRoute = '/RegisterAppointmentScreen';
 String kMyAppointmentScreenRoute = '/MyAppointmentScreen';
+String kReportKeepingScreenRoute = '/ReportKeepingScreen';
+String kUploadYourConsultantScreenRoute = '/UploadYourConsultantScreen';
 String kMapScreenRoute = '/MapScreenRoute';

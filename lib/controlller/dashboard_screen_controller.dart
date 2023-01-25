@@ -11,6 +11,12 @@ class DashboardScreenController extends GetxController{
       Get.toNamed(kRegisterAppointmentScreenRoute);
     } else if(title == "My\nAppointment"){
       Get.toNamed(kMyAppointmentScreenRoute);
+    } else if(title == "Keep\nReport"){
+      Get.toNamed(kReportKeepingScreenRoute);
+    } else if(title == "Upload\nConsultant"){
+      Get.toNamed(kUploadYourConsultantScreenRoute);
+    } else if(title == "Ambulance"){
+      Get.toNamed(kMapScreenRoute);
     }
   }
 }
